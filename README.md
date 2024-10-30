@@ -48,3 +48,14 @@ El “side effect” en Mock nos permite modificar el comportamiento de un méto
 ```
 python -m unittest tests.test_api_client.ApiClientTest.test_get_location_return_side_effect
 ```
+
+# SubTest
+Nos ayuda a realizar validaciones con varios valores sin la necesidad de crear varios métodos. SubTest también es útil para identificar errores específicos. Si una prueba falla con un conjunto particular de parámetros, SubTest permitirá identificar fácilmente qué valores causaron el fallo. 
+
+```
+python -m unittest tests.test_bank_account.BankAccoutTest.test_deposit_multiple_amounts
+```
+
+# Doctest
+
+Doctest es una librería que está incluida en Python y que permite crear pruebas en los comentarios del código.
