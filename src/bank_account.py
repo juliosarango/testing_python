@@ -25,6 +25,17 @@ class BankAccount:
         self.grabar_log(self.log_file_withdraw, message)
 
     def deposit(self, amount):
+        """Deposit method
+
+        Args:
+            amount (number): Amount that we will deposit
+
+        Returns:
+            number: New balance after deposit
+        >>> account = BankAccount(100)
+        >>> account.deposit(50)
+        150
+        """
         if amount > 0:
             self.balance += amount
             self._log_transaction(f"Deposited {amount}- New balance: {self.balance}")

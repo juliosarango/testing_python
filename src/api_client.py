@@ -16,7 +16,3 @@ def get_location(ip):
         "city": data["cityName"],
         "code": data["countryCode"],
     }
-
-
-if __name__ == "__main__":
-    get_location("8.8.0")

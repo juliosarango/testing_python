@@ -59,3 +59,31 @@ python -m unittest tests.test_bank_account.BankAccoutTest.test_deposit_multiple_
 # Doctest
 
 Doctest es una librería que está incluida en Python y que permite crear pruebas en los comentarios del código.
+
+# Faker
+```
+pip install Faker
+pip freeze | grep Kaker
+```
+
+# Coverage
+```
+
+coverage run --source src -m unittest
+coverage report
+```
+![Coverage report](images/report.png)
+
+Si queremos ver un reporte más detallado y dinámico sacamos el reporte en formato html.
+```
+coverage html
+```
+![Coverage html](images/report_html.png)
+Podemos hacer clic en cada uno de los nombres donde se mostrará la cobertura de las pruebas. 
+A modo de pruebas, al hacer clic en el archivo que está con 98% de convertura, se mostrará la parte no cubierta
+![Report Detail](images/report_detail.png)
+
+Si corregimos la parte que no tiene cobertura y ejecutamos nuevamente el comando ```coverage html``` cambiará el resultado.
+![Coverage html full](images/report_html_full.png)
+
+![Report Detail](images/report_detail_full.png)

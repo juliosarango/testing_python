@@ -36,7 +36,9 @@ class BankAccoutTest(unittest.TestCase):
         new_balance = self.account.withdraw(200)
         self.assertEqual(new_balance, 800)
 
-    def test_withdraw_with_negative_amount_not_decrease(self):
+    @patch("src.bank_account.datetime")
+    def test_withdraw_with_negative_amount_not_decrease(self, mock_datetime):
+        mock_datetime.now.return_value.hour = 10
         self.assertEqual(self.account.withdraw(-10), 1000)
 
     def test_get_balance(self):
@@ -51,7 +53,9 @@ class BankAccoutTest(unittest.TestCase):
         self.account.deposit(500)
         self.assertEqual(self._count_lines(self.account.log_file), 2)
 
-    def test_withdraw_without_saldo(self):
+    @patch("src.bank_account.datetime")
+    def test_withdraw_without_saldo(self, mock_datetime):
+        mock_datetime.now.return_value.hour = 10
         self.account.withdraw(1500)
         self.assertTrue(os.path.exists("withdraw_log.txt"))
         self.assertEqual(self._count_lines(self.account.log_file_withdraw), 1)
