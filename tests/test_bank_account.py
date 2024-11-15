@@ -30,7 +30,8 @@ class BankAccoutTest(unittest.TestCase):
         self.assertEqual(new_balance, 1500)
 
     def test_deposit_with_negative_amount_not_increase(self):
-        self.assertEqual(self.account.deposit(-50), 1000)
+        with self.assertRaises(ValueError):
+            self.assertEqual(self.account.deposit(-50))
 
     def test_withdraw(self):
         new_balance = self.account.withdraw(200)

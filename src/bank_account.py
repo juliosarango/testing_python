@@ -36,6 +36,10 @@ class BankAccount:
         >>> account.deposit(50)
         150
         """
+
+        if amount < 0:
+            raise ValueError("Can't deposit negative amounts")
+
         if amount > 0:
             self.balance += amount
             self._log_transaction(f"Deposited {amount}- New balance: {self.balance}")
