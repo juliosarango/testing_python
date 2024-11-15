@@ -25,7 +25,9 @@ def test_deposit_with_negative_amount_not_increase(account):
         account.deposit(-50)
 
 
-def test_withdraw(account):
+@patch("src.bank_account.datetime")
+def test_withdraw(mock_datetime, account):
+    mock_datetime.now.return_value.hour = 10
     new_balance = account.withdraw(200)
     assert new_balance == 800
 
