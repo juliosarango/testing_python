@@ -33,6 +33,7 @@ test_deposit_negative_amount_increase_balance
 
 
 # Mocking de APIs externas
+![Mockin](images/mockin.png)
 Un Mock es una herramienta que nos permite simular comportamientos de funciones o servicios externos. En lugar de ejecutar una llamada real a una API, podemos definir una respuesta predefinida, lo que permite:
 
 - Evitar depender de servicios externos en pruebas.
@@ -40,6 +41,8 @@ Un Mock es una herramienta que nos permite simular comportamientos de funciones 
 - Controlar los resultados esperados.
 
 # Side Effects en Mocking
+![Side Effect](images/side_effect.png)
+
 El “side effect” en Mock nos permite modificar el comportamiento de un método en distintas llamadas. Se define como una lista de comportamientos, donde cada elemento de la lista corresponde al resultado de una llamada específica. Esto permite:
 
 - Simular fallos de manera controlada, como lanzar excepciones específicas en las pruebas.
@@ -50,6 +53,7 @@ python -m unittest tests.test_api_client.ApiClientTest.test_get_location_return_
 ```
 
 # SubTest
+![Subtest](images/subtests.png)
 Nos ayuda a realizar validaciones con varios valores sin la necesidad de crear varios métodos. SubTest también es útil para identificar errores específicos. Si una prueba falla con un conjunto particular de parámetros, SubTest permitirá identificar fácilmente qué valores causaron el fallo. 
 
 ```
@@ -57,10 +61,11 @@ python -m unittest tests.test_bank_account.BankAccoutTest.test_deposit_multiple_
 ```
 
 # Doctest
-
+![Doctest](images/doc_test.png)
 Doctest es una librería que está incluida en Python y que permite crear pruebas en los comentarios del código.
 
 # Faker
+![Faker](images/faker.png)
 ```
 pip install Faker
 pip freeze | grep Kaker
